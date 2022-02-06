@@ -2,7 +2,8 @@ from collections import  defaultdict
 def mincoins(coins, x):
     if x == 0:
         return 0
-
+    if x < 0:
+        return -1
     res = float('inf')
     for i in range(len(coins)):
         if coins[i] <= x:
@@ -90,10 +91,10 @@ def coinwaysdp(coins, x):
 
 
 
-coins = [1,2,3]
-#print(mincoins(coins, 20))
+coins = [2]
+print(mincoins(coins, 3))
 # print(mincoinsmemo(coins, 20))
 # print(mincoinsdp(coins, 20))
-print(coinways(coins, 4))
+#print(coinways(coins, 4))
 # print(coinwaysmemo(coins, 11))
 #print(coinwaysdp(coins, 20))
